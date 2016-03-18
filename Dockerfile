@@ -4,7 +4,8 @@
 #
 # Dockerizing zookeeper: Dockerfile for building zookeeper  images
 #
-FROM  ubuntu:latest
+FROM  debian:wheezy
+#FROM alpine:latest
 MAINTAINER  cuisongliu <cuisongliu@qq.com>
 
 ENV ZOOKEEPER_VERSION 3.4.6
