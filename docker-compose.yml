@@ -9,6 +9,7 @@ zoo1:
       - /mnt/docker-project/zookeeper/zoo1:/opt/zookeeper/conf
    ports:
       - "2181:2181"
+   expose:
       - "2888"
       - "3888"   
 zoo2:
@@ -22,6 +23,7 @@ zoo2:
       - /mnt/docker-project/zookeeper/zoo2:/opt/zookeeper/conf
    ports:
       - "2182:2181"
+   expose:
       - "2888"
       - "3888"   
 zoo3:
@@ -35,6 +37,6 @@ zoo3:
       - /mnt/docker-project/zookeeper/zoo3:/opt/zookeeper/conf
    ports:
       - "2183:2181"
+   expose:
       - "2888"
       - "3888" 
-   

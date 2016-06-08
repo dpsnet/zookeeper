@@ -27,4 +27,4 @@ RUN chmod 777  $ZOO_HOME/bin/zkServer.sh
 
 ENV TZ "Asia/Shanghai"
 EXPOSE 2181 2888 3888
-CMD ["zkServer.sh", "start"]
+CMD ["zkServer.sh", "start-foreground"]
