@@ -1,0 +1,40 @@
+zoo1:
+   image: jerry/zookeeper:latest
+   restart: always
+   net: zoo
+   container_name: zk1
+   volumes:
+      - /mnt/data/zoo1:/opt/data
+      - /mnt/logs/zoo1:/opt/log
+      - /mnt/docker-project/zookeeper/zoo1:/opt/zookeeper/conf
+   ports:
+      - "2181:2181"
+      - "2888"
+      - "3888"   
+zoo2:
+   image: jerry/zookeeper:latest
+   restart: always
+   net: zoo
+   container_name: zk2
+   volumes:
+      - /mnt/data/zoo2:/opt/data
+      - /mnt/logs/zoo2:/opt/log
+      - /mnt/docker-project/zookeeper/zoo2:/opt/zookeeper/conf
+   ports:
+      - "2182:2181"
+      - "2888"
+      - "3888"   
+zoo3:
+   image: jerry/zookeeper:latest
+   restart: always
+   container_name: zk3
+   net: zoo
+   volumes:
+      - /mnt/data/zoo3:/opt/data
+      - /mnt/logs/zoo3:/opt/log
+      - /mnt/docker-project/zookeeper/zoo3:/opt/zookeeper/conf
+   ports:
+      - "2183:2181"
+      - "2888"
+      - "3888" 
+   
