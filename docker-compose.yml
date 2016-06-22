@@ -6,7 +6,7 @@ zoo1:
    volumes:
       - /mnt/data/zoo1:/opt/data
       - /mnt/logs/zoo1:/opt/log
-      - /mnt/docker-project/zookeeper/zoo1:/opt/zookeeper/conf
+      - /mnt/docker-project/zookeeper/zoo:/opt/zookeeper/conf
    ports:
       - "2181:2181"
    expose:
@@ -20,7 +20,7 @@ zoo2:
    volumes:
       - /mnt/data/zoo2:/opt/data
       - /mnt/logs/zoo2:/opt/log
-      - /mnt/docker-project/zookeeper/zoo2:/opt/zookeeper/conf
+      - /mnt/docker-project/zookeeper/zoo:/opt/zookeeper/conf
    ports:
       - "2182:2181"
    expose:
@@ -34,9 +34,51 @@ zoo3:
    volumes:
       - /mnt/data/zoo3:/opt/data
       - /mnt/logs/zoo3:/opt/log
-      - /mnt/docker-project/zookeeper/zoo3:/opt/zookeeper/conf
+      - /mnt/docker-project/zookeeper/zoo:/opt/zookeeper/conf
    ports:
       - "2183:2181"
+   expose:
+      - "2888"
+      - "3888" 
+zoo4:
+   image: jerry/zookeeper:latest
+   restart: always
+   container_name: zk4
+   net: zoo
+   volumes:
+      - /mnt/data/zoo4:/opt/data
+      - /mnt/logs/zoo4:/opt/log
+      - /mnt/docker-project/zookeeper/zoo:/opt/zookeeper/conf
+   ports:
+      - "2184:2181"
+   expose:
+      - "2888"
+      - "3888" 
+zoo5:
+   image: jerry/zookeeper:latest
+   restart: always
+   container_name: zk5
+   net: zoo
+   volumes:
+      - /mnt/data/zoo5:/opt/data
+      - /mnt/logs/zoo5:/opt/log
+      - /mnt/docker-project/zookeeper/zoo:/opt/zookeeper/conf
+   ports:
+      - "2185:2181"
+   expose:
+      - "2888"
+      - "3888" 
+zoo6:
+   image: jerry/zookeeper:latest
+   restart: always
+   container_name: zk6
+   net: zoo
+   volumes:
+      - /mnt/data/zoo6:/opt/data
+      - /mnt/logs/zoo6:/opt/log
+      - /mnt/docker-project/zookeeper/zoo:/opt/zookeeper/conf
+   ports:
+      - "2186:2181"
    expose:
       - "2888"
       - "3888" 

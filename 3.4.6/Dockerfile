@@ -15,7 +15,7 @@ RUN mkdir -p /opt/log
 
 WORKDIR /opt/
 
-ADD http://soft.cuisongliu.com/zookeeper-3.4.6.tar.gz  /opt/zookeeper-3.4.6.tar.gz
+ADD http://soft.cuisongliu.com/zookeeper-3.4.6.tar.gz /opt/zookeeper-3.4.6.tar.gz
 RUN tar -zxvf zookeeper-$ZOO_VERSION.tar.gz && rm -rf *.tar.gz
 RUN mv zookeeper-$ZOO_VERSION zookeeper
 ENV ZOO_HOME /opt/zookeeper
